@@ -70,15 +70,15 @@ begin
 
   FLoadedResourceCount := 0;
   FPlayer := TsmTexture.Create(Self);
-  FPlayer.Src := 'assets/images/player.png';
+  FPlayer.Src := document.location.pathname + '/assets/images/player.png';
   FPlayer.OnLoad := @LoadNotify;
 
   FDig := TsmTexture.Create(Self);
-  FDig.Src := 'assets/images/dig.png';
+  FDig.Src := document.location.pathname + '/assets/images/dig.png';
   FDig.OnLoad := @LoadNotify;
 
 
-  FMap := TsmTileMap.Create('/assets/levels/level1.json');
+  FMap := TsmTileMap.Create(document.location.pathname + '/assets/levels/level1.json');
   FMap.OnLoaded := @LoadMap;
   //  TJSHTMLImageElement(FTexture).onload := @LoadHandler;
   //  FTexture.Name := 'smb_enemies_sheet';
